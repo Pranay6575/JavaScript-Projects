@@ -14,3 +14,9 @@ let d = new Date()
 usa.innerHTML = d.toLocaleString('en-US', {
     timeZone: 'America/Los_Angeles',
   }).split(", ")[1]
+india.innerHTML = d.toLocaleString('en-US', {
+    timeZone: 'America/Los_Angeles',
+  }).split(", ")[1]
+china.innerHTML = d.toLocaleString('en-US', {
+    timeZone: 'America/Los_Angeles',
+  }).split(", ")[1]
