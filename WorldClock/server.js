@@ -1,15 +1,3 @@
-// const express = require('express')
-// const app = express()
-// const port = 3000
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
-
 let updateTime = () => {
   let d = new Date();
   usa.innerHTML = d
@@ -27,6 +15,15 @@ let updateTime = () => {
       timeZone: "Asia/Kolkata",
     })
     .split(", ")[1];
+
+    let alarmhour = alarm.value.split(":")[0];
+    let alarmmin = alarm.value.split(":")[1];
+    if(d.getHours() == alarmhour && d.getMinutes() == alarmmin){
+      console.log("Alarm is Ringing");
+      let audioUrl = "https://samplelib.com/lib/preview/mp3/sample-3s.mp3";
+      let audio = new Audio(audioUrl);
+      audio.play();
+    }
 };
 
 setInterval(updateTime, 1000);
